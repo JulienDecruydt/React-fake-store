@@ -1,23 +1,11 @@
-import { createSlice, configureStore } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit'
 
-const cartSlice = createSlice({
-    name: 'cart',
-    initialState: [],
-    reducers: {
-        addItem: (state, action) => {
-            // { type: 'cart/addItem', payload: {....} }
-            const newItem = action.payload
-            state.push(newItem)
-        },
-        deleteItem: (state, action) => {
-            // { type: 'cart/deleteItem', payload: 1 }
-            state = state.filter(c => c.id !== action.payload)
-        }
-    }
-})
+import cartSlice from './reducers/cartSlice'
+import userSlice from './reducers/userSlice'
 
 export const store = configureStore({
     reducer: {
-        cart: cartSlice.reducer
+        cart: cartSlice.reducer,
+        user: userSlice.reducer
     }
 })

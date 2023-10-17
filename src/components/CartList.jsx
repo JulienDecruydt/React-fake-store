@@ -11,13 +11,13 @@ export default function CartList() {
         </div>
         <div className="mt-4 h-full p-4 bg-gray-100">
             <div className="lg:flex">
-            <div className="text-left w-full">
-                <h2 className="text-gray-700">{ item.title }</h2>
-                <span className="text-xs text-gray-500">{item.category}</span>
-            </div>
-            <div className="text-center my-2 lg:my-0 lg:text-right">
-                <h3 className="font-bold">{item.price}€</h3>
-            </div>
+                <div className="text-left w-full">
+                    <h2 className="text-gray-700">{ item.title }</h2>
+                    <span className="text-xs text-gray-500">{item.category}</span>
+                </div>
+                <div className="text-center my-2 lg:my-0 lg:text-right">
+                    <h3 className="font-bold">{item.price}€</h3>
+                </div>
             </div>
             <div className="mt-3">
             </div>

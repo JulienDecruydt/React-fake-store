@@ -27,7 +27,7 @@ export default function ProductsGallery() {
       })
     }
 
-    if (!data) return 'Chargement....'
+    if (!data) return
 
     const renderData = data.map((item, index) => 
         <div className="border rounded-lg overflow-hidden" key={index}>
@@ -54,7 +54,7 @@ export default function ProductsGallery() {
     <section className="lg:w-1/2 w-full px-4 mx-auto">
       <h1 className="text-left text-2xl font-bold tracking-tight text-gray-900 my-5">All Products</h1>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-        {renderData}
+        { !data ? 'Chargement...' : renderData}
       </div>
     </section>
   )
