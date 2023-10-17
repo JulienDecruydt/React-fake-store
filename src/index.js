@@ -1,13 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './index.css';
 import App from './App';
+import CartPage from './pages/CartPage';
 import reportWebVitals from './reportWebVitals';
+import Menu from './components/Menu'
+import { Provider } from 'react-redux'
+import { store } from './redux'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Provider store={store}>
+        <Menu />
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/cart" element={<CartPage />} />
+        </Routes>        
+      </Provider>
+    </Router>
   </React.StrictMode>
 );
 
